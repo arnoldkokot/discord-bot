@@ -1,4 +1,4 @@
-let connection;
+let connection, dispatcher;
 export const commands = [
     {
         name: 'ping',
@@ -25,9 +25,17 @@ export const commands = [
         description: 'Odtwarza muzykę',
         keyWords: ['graj', 'magik'],
         execute: function(message) {
-            connection.play('./sounds/magik.mp3', {
+            dispatcher = connection.play('./sounds/magik.mp3', {
                 volume: 0.1,
             });
+        }
+    },
+    {
+        name: 'stop',
+        description: 'Wstrzymuje odtwarzanie muzyki',
+        keyWords: [],
+        execute: function(message) {
+            dispatcher.pause();
         }
     },
     {
