@@ -1,3 +1,4 @@
+import Discord from 'discord.js';
 let connection, dispatcher;
 export const commands = [
     {
@@ -43,10 +44,26 @@ export const commands = [
         description: 'Wyświetla listę komend',
         keyWords: ['?', 'pomoc'],
         execute: function(message) {
-            message.channel.send(`### Daiji Warden v0.0.2 ###`);
+            let commandFields = [];
             commands.forEach(command => {
-                message.channel.send(`${command.name}: ${command.description} [${command.keyWords}]`);
+                commandFields.push({
+                    name: command.name + `, ${command.keyWords}`,
+                    value: command.description
+                });
             });
+            let embed = new Discord.MessageEmbed()
+                .setColor('#43B581')
+                .setTitle('Daiji bot')
+                //.setURL('https://discord.js.org/')
+                //.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+                //.setDescription('Some description here')
+                //.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+                .addFields(commandFields)
+                //.addField('Inline field title', 'Some value here', true)
+                //.setImage('https://i.imgur.com/wSTFkRM.png')
+                .setFooter('v0.0.2');
+                //.setFooter('v0.0.2', 'https://i.imgur.com/wSTFkRM.png');
+            message.channel.send(embed);
         }
     }
 ]
