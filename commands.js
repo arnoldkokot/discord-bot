@@ -16,6 +16,9 @@ export const commands = [
         execute: async function(message) {
             if (message.member.voice.channel) {
                 connection = await message.member.voice.channel.join();
+                dispatcher = connection.play('./sounds/hello_1.mp3', {
+                    volume: 0.5,
+                });
             } else {
                 message.reply('Nie wiem gdzie dołączyć');
             }
@@ -47,22 +50,16 @@ export const commands = [
             let commandFields = [];
             commands.forEach(command => {
                 commandFields.push({
-                    name: command.name + `, ${command.keyWords}`,
+                    name: `${command.name} (${command.keyWords})`,
                     value: command.description
                 });
             });
-            let embed = new Discord.MessageEmbed()
+            const embed = new Discord.MessageEmbed()
                 .setColor('#43B581')
-                .setTitle('Daiji bot')
-                //.setURL('https://discord.js.org/')
-                //.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-                //.setDescription('Some description here')
-                //.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+                .setTitle('Daiji Warden')
+                .setThumbnail('https://cdn.discordapp.com/attachments/792750741823291412/843968942342668308/jaketree_small.jpg')
                 .addFields(commandFields)
-                //.addField('Inline field title', 'Some value here', true)
-                //.setImage('https://i.imgur.com/wSTFkRM.png')
-                .setFooter('v0.0.2');
-                //.setFooter('v0.0.2', 'https://i.imgur.com/wSTFkRM.png');
+                .setFooter(`v0.0.3`);
             message.channel.send(embed);
         }
     }

@@ -18,7 +18,11 @@ bot.on('message', async message => {
 		commands.forEach(command => {
 			if(command.name == userInput || command.keyWords.includes(userInput)) {
 				executed = true;
-				command.execute(message);
+				try {
+					command.execute(message);
+				} catch(error) {
+					message.channel.send(`Arek coś zjebał w moim kodzie :/ \n ${error}`)
+				}
 				return;
 			}
 		});
