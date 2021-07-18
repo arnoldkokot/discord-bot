@@ -6,8 +6,8 @@
 -[x] ping
 -[x] help
 -[x] join & leave
--[] play
+-[x] play
 -[] skip
--[] pause/resume
--[] stop
--[] volume
+-[x] pause/resume
+-[x] stop
+-[x] volume
