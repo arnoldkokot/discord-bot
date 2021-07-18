@@ -3,11 +3,11 @@
 
 
 ## Commands
--[x] ping
--[x] help
--[x] join & leave
--[x] play
--[] skip
--[x] pause/resume
--[x] stop
--[x] volume
+- [x] ping
+- [x] help
+- [x] join & leave
+- [x] play
+- [ ] skip
+- [x] pause/resume
+- [x] stop
+- [x] volume
