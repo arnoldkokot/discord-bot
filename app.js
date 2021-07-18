@@ -4,7 +4,7 @@ import * as commands from "./commands/index.js";
 
 const bot = new Discord.Client();
 
-bot.on("message", (message) => {
+bot.on("message", async (message) => {
   if (!message.mentions.has(bot.user.id) || message.author.bot) return;
 
   const userInput = message.content
@@ -12,12 +12,14 @@ bot.on("message", (message) => {
     .trim()
     .toLowerCase();
 
+  const [userCommand, ...args] = userInput.split(" ");
+
   let executed = false;
   for (const name in commands) {
     const { keys, execute } = commands[name];
-    if (keys.includes(userInput)) {
+    if (keys.includes(userCommand)) {
       try {
-        execute(message);
+        await execute(message, args);
       } catch (error) {
         message.channel.send(`Spaghetti code, error :( \n ${error}`);
         console.error(error);
@@ -26,7 +28,7 @@ bot.on("message", (message) => {
       break;
     }
   }
-  if (!executed) message.channel.send(`Unknown command "${userInput}" :|`);
+  if (!executed) message.channel.send(`Unknown command "${userCommand}" :|`);
 });
 
 bot.once("ready", () => console.info(`${bot.user.tag} logged in.`));

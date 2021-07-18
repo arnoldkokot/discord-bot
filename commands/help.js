@@ -1,14 +1,14 @@
 import * as commands from "./index.js";
 const command = {
-  description: "display this embed",
+  description: "List all available commands",
   keys: ["help"],
   execute(message, args) {
     const fields = [];
 
     for (const name in commands) {
-      const { description } = commands[name];
+      const { description, keys } = commands[name];
       fields.push({
-        name,
+        name: keys.join(" | "),
         value: description,
         inline: false,
       });
@@ -16,13 +16,13 @@ const command = {
 
     const embed = {
       title: "Daiji Warden",
-      color: 0x43b581,
+      color: 0x574486,
       thumbnail: {
         url: "attachment://jaketree_small.jpg",
       },
       fields,
       footer: {
-        text: "v0.0.4",
+        text: "v1.0.0",
       },
     };
 

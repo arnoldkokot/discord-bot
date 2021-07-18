@@ -1,6 +1,6 @@
 const command = {
-  description: "move to channel",
-  keys: ["", "move"],
+  description: "Move to the message author's channel",
+  keys: ["move", "come", ""],
   execute(message, args) {
     const voiceChannel = message.member.voice.channel;
     if (voiceChannel) {

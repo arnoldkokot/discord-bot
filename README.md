@@ -4,8 +4,10 @@
 
 ## Commands
 -[x] ping
--[x] move
 -[x] help
+-[x] join & leave
 -[] play
+-[] skip
+-[] pause/resume
 -[] stop
 -[] volume

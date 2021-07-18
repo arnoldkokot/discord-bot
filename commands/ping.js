@@ -1,8 +1,11 @@
 const command = {
-  description: "ping -> pong test command",
-  keys: ["ping", "pong"],
+  description: "Test network latency",
+  keys: ["ping"],
   execute(message, args) {
-    message.channel.send("Pong.");
+    const start = Date.now();
+    message.channel.send("Pong. (...)").then((message) => {
+      message.edit(`Pong. (${Date.now() - start}ms)`);
+    });
   },
 };
 export default command;
