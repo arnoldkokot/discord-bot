@@ -1,35 +1,33 @@
-import 'dotenv/config.js';
-import Discord from 'discord.js';
-import { commands } from './commands.js';
+import "dotenv/config.js";
+import Discord from "discord.js";
+import * as commands from "./commands/index.js";
 
 const bot = new Discord.Client();
 
-bot.on('message', async message => {
+bot.on("message", (message) => {
+  if (!message.mentions.has(bot.user.id) || message.author.bot) return;
 
-	//Messages to ignore (selfpings, @everyone etc.)
-	if(!message.guild) return ;
-	if(message.author.bot) return ;
-	if(message.content.includes("@here") || message.content.includes("@everyone")) return false;
+  const userInput = message.content
+    .replace(`<@!${bot.user.id}>`, "")
+    .trim()
+    .toLowerCase();
 
-	if(message.mentions.has(bot.user.id)) {
-
-		const userInput = message.content.replace(`<@!${bot.user.id}>`,'').trim().toLowerCase();
-		let executed = false;
-		commands.forEach(command => {
-			if(command.name == userInput || command.keyWords.includes(userInput)) {
-				executed = true;
-				try {
-					command.execute(message);
-				} catch(error) {
-					message.channel.send(`Arek coś zjebał w moim kodzie :/ \n ${error}`)
-				}
-				return;
-			}
-		});
-		if(!executed) message.reply('co?');
-	}
-
+  let executed = false;
+  for (const name in commands) {
+    const { keys, execute } = commands[name];
+    if (keys.includes(userInput)) {
+      try {
+        execute(message);
+      } catch (error) {
+        message.channel.send(`Spaghetti code, error :( \n ${error}`);
+        console.error(error);
+      }
+      executed = true;
+      break;
+    }
+  }
+  if (!executed) message.channel.send(`Unknown command "${userInput}" :|`);
 });
 
-bot.on('ready', () => console.info(`Logged in as ${bot.user.tag}!`));
+bot.once("ready", () => console.info(`${bot.user.tag} logged in.`));
 bot.login(process.env.TOKEN);
