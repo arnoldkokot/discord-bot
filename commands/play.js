@@ -17,12 +17,17 @@ const command = {
 
     const connection = await message.member.voice.channel.join();
     if (ytdl.validateURL(audioLink)) {
-      const stream = ytdl(audioLink, { filter: "audioonly" });
+      console.log(`"${audioLink}"`);
+      console.log(audioLink == "https://www.youtube.com/watch?v=ZlAU_w7-Xp8");
+      console.log(typeof audioLink);
+      const stream = ytdl(audioLink, {
+        filter: "audioonly",
+      });
       connection
         .play(stream, {
           volume: 0.5,
         })
-        .on("error", (error) => {
+        .on("error", error => {
           console.log(error);
           message.reply(`Spaghetti code, error :( \n ${error}`);
         });

@@ -1,16 +1,15 @@
-import "dotenv/config.js";
 import Discord from "discord.js";
 import * as commands from "./commands/index.js";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const bot = new Discord.Client();
 
-bot.on("message", async (message) => {
+bot.on("message", async message => {
   if (!message.mentions.has(bot.user.id) || message.author.bot) return;
 
-  const userInput = message.content
-    .replace(`<@!${bot.user.id}>`, "")
-    .trim()
-    .toLowerCase();
+  const userInput = message.content.replace(`<@!${bot.user.id}>`, "").trim();
 
   const [userCommand, ...args] = userInput.split(" ");
 
@@ -21,7 +20,7 @@ bot.on("message", async (message) => {
       try {
         await execute(message, args);
       } catch (error) {
-        message.channel.send(`Spaghetti code, error :( \n ${error}`);
+        message.channel.send(`Something went terribly wrong :cry: \n ${error}`);
         console.error(error);
       }
       executed = true;
