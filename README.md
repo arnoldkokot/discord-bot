@@ -48,6 +48,8 @@
 Daiji brings music from youtube directly to your voice channel allowing you to listen to music of
 your choice with your friends. It supports direct youtube links and links to playlists.
 
+[See Website](https://daiji-bot.com/)
+
 ### Commands
 
 - [x] Help - List all commands
