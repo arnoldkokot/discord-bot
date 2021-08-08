@@ -1,17 +1,21 @@
 <br />
 <p align="center">
 
+  <a href="https://daiji-bot.com/">
+    <img src="img/jaketree_small.jpg" alt="Logo" width="80" height="80">
+  </a>
+
   <h3 align="center">"Daiji" Discord Bot</h3>
 
   <p align="center">
-    A simple and easy to use calculator for students applying to AGH UST
+    You, your friends, and some good tunes.
     <br />
-    <a href="https://calc.deithy.me/"><strong>View live »</strong></a>
+    <a href="https://daiji-bot.com/"><strong>View website »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/deithy/recruitment-calculator/issues">Report bug</a>
+    <a href="https://github.com/deithy/discord-bot/issues">Report bug</a>
     ·
-    <a href="https://github.com/deithy/recruitment-calculator/issues">Request Feature</a>
+    <a href="https://github.com/deithy/discord-bot/issues">Request Feature</a>
   </p>
 </p>
 
@@ -42,18 +46,14 @@
 
 [![Preview image](preview.png)](https://calc.deithy.me/)
 
-The algorithm for calculating recruitments points can be confusing and has some grey areas that are not
-well documented, not to mention that one can only see his score after selecting the study field. This
-project aims to fix that issue by allowing future students to fill their scores globally and see
-all the scores before selecting study fields.
+Discord music bot allowing you to play YouTube videos and playlists in a voice channel using text commands.
 
 ### Built With
 
 Major tools used are listed below, to see the full list go to acknowledgements.
 
-- [React](https://reactjs.org/)
-- [Primer](https://primer.style/)
-- [Redux toolkit](https://redux-toolkit.js.org/)
+- [Discord API](https://discord.com/developers)
+-
 
 ## Getting Started
 
@@ -69,13 +69,13 @@ Node and npm are required to install and run the project.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/deithy/recruitment-calculator.git
+   git clone https://github.com/deithy/discord-bot.git
    ```
 2. Install NPM packages
    ```sh
    npm install
    ```
-3. Run in browser
+3. Run on your machine
    ```sh
    npm start
    ```
@@ -88,12 +88,20 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Arnold Kokot - [@deithyy](https://twitter.com/deithyy) - ogkokot@gmail.com
 
-Project Link: [https://github.com/deithy/recruitment-calculator](https://github.com/deithy/recruitment-calculator)
+Project Link: [https://github.com/deithy/discord-bot](https://github.com/deithy/discord-bot)
 
 ## Acknowledgements
 
+bot:
+
+- [FFmpeg](https://ffmpeg.org/download.html)
+- [Opus encoder](https://www.npmjs.com/package/@discordjs/opus)
+- [YTDL core](https://github.com/fent/node-ytdl-core)
+- [Discord.js](https://discord.js.org/#/)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+
+daiji-bot.com website:
+
+- [Material design](https://redux-toolkit.js.org/)
 - [Create react app](https://create-react-app.dev/)
 - [React](https://reactjs.org/)
-- [Normalize.css](https://shields.io)
-- [Primer](https://primer.style/)
-- [Redux toolkit](https://redux-toolkit.js.org/)
