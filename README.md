@@ -26,6 +26,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#commands">Commands</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -44,9 +45,19 @@
 
 ## About The Project
 
-[![Preview image](preview.png)](https://calc.deithy.me/)
+Daiji brings music from youtube directly to your voice channel allowing you to listen to music of
+your choice with your friends. It supports direct youtube links and links to playlists.
 
-Discord music bot allowing you to play YouTube videos and playlists in a voice channel using text commands.
+### Commands
+
+- [x] Help - List all commands
+- [x] Ping - Test bot latency
+- [x] Move - Summon bot to channel
+- [x] Leave - Kick bot from channel
+- [x] Play - Start playing YouTube link
+- [x] Pause - Hold playback
+- [x] Resume - Resume playback
+- [x] Volume - Control playback volume
 
 ### Built With
 
