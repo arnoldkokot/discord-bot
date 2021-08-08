@@ -61,10 +61,11 @@ your choice with your friends. It supports direct youtube links and links to pla
 
 ### Built With
 
-Major tools used are listed below, to see the full list go to acknowledgements.
+Major tools and websites used are listed below, to see the full list go to acknowledgements.
 
 - [Discord API](https://discord.com/developers)
--
+- [FFmpeg](https://ffmpeg.org/download.html)
+- [ytdl core](https://github.com/fent/node-ytdl-core)
 
 ## Getting Started
 
@@ -103,15 +104,13 @@ Project Link: [https://github.com/deithy/discord-bot](https://github.com/deithy/
 
 ## Acknowledgements
 
-bot:
-
 - [FFmpeg](https://ffmpeg.org/download.html)
 - [Opus encoder](https://www.npmjs.com/package/@discordjs/opus)
 - [YTDL core](https://github.com/fent/node-ytdl-core)
 - [Discord.js](https://discord.js.org/#/)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 
-daiji-bot.com website:
+Portfolio website:
 
 - [Material design](https://redux-toolkit.js.org/)
 - [Create react app](https://create-react-app.dev/)
