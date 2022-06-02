@@ -2,7 +2,7 @@
 <p align="center">
 
   <a href="https://daiji-bot.com/">
-    <img src="img/jaketree_small.jpg" alt="Logo" width="80" height="80">
+    <img src="bot/img/jaketree_small.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">"Daiji" Discord Bot</h3>
