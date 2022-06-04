@@ -71,8 +71,6 @@ Major tools and websites used are listed below, to see the full list go to ackno
 
 ## Getting Started
 
-If you would like to see how the project works you may want to install it on your machine.
-
 To get a local copy up and running follow steps below.
 
 ### Prerequisites
