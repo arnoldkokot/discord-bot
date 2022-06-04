@@ -6,26 +6,16 @@ import {
   Banner,
   Footer,
 } from "./sections";
-import { Container, Navigation, Wrapper } from "./components";
+import { Navigation } from "./components";
 
 export default function App() {
   return (
     <>
-      <Wrapper>
-        <Hero />
-        <Container>
-          <Features />
-        </Container>
-        <Container>
-          <Commands />
-        </Container>
-        <Container>
-          <Questions />
-        </Container>
-        <Container>
-          <Banner />
-        </Container>
-      </Wrapper>
+      <Hero />
+      <Features />
+      <Commands />
+      <Questions />
+      <Banner />
       <Footer />
       <Navigation />
     </>
